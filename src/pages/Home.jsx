@@ -91,12 +91,12 @@ function SubChip({ label, active, onClick }) {
 function CategoryChip({ cat, active, onClick }) {
   return (
     <motion.button whileTap={{ scale: 0.93 }} onClick={onClick}
-      className={`inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${active ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
+      className={`shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${active ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-800 border border-gray-200 shadow-sm hover:border-primary/40'}`}>
       {cat.image
         ? <img src={assetUrl(cat.image)} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
         : <span className="shrink-0">🍽️</span>
       }
-      <span>{cat.name}</span>
+      <span className="shrink-0">{cat.name}</span>
     </motion.button>
   );
 }
@@ -181,7 +181,7 @@ export default function Home() {
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
               {/* All */}
               <motion.button whileTap={{ scale: 0.93 }} onClick={() => handleCategorySelect('all')}
-                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${activeCategory === 'all' ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
+                className={`shrink-0 inline-flex items-center gap-2 px-3 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-all ${activeCategory === 'all' ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-800 border border-gray-200 shadow-sm hover:border-primary/40'}`}>
                 <span>🍽️ الكل</span>
               </motion.button>
               {categories.map((cat) => (

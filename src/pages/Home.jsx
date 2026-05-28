@@ -91,13 +91,12 @@ function SubChip({ label, active, onClick }) {
 function CategoryChip({ cat, active, onClick }) {
   return (
     <motion.button whileTap={{ scale: 0.93 }} onClick={onClick}
-      className={`relative inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${active ? 'text-white' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
-      {active && <motion.span layoutId="activeCat" className="absolute inset-0 bg-primary rounded-full" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />}
+      className={`inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${active ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
       {cat.image
-        ? <img src={assetUrl(cat.image)} alt="" className="relative z-10 w-6 h-6 rounded-full object-cover shrink-0" />
-        : <span className="relative z-10 shrink-0">🍽️</span>
+        ? <img src={assetUrl(cat.image)} alt="" className="w-6 h-6 rounded-full object-cover shrink-0" />
+        : <span className="shrink-0">🍽️</span>
       }
-      <span className="relative z-10">{cat.name}</span>
+      <span>{cat.name}</span>
     </motion.button>
   );
 }
@@ -182,9 +181,8 @@ export default function Home() {
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
               {/* All */}
               <motion.button whileTap={{ scale: 0.93 }} onClick={() => handleCategorySelect('all')}
-                className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${activeCategory === 'all' ? 'text-white' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
-                {activeCategory === 'all' && <motion.span layoutId="activeCat" className="absolute inset-0 bg-primary rounded-full" transition={{ type: 'spring', stiffness: 400, damping: 30 }} />}
-                <span className="relative z-10">🍽️ الكل</span>
+                className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${activeCategory === 'all' ? 'bg-primary text-white shadow-md' : 'bg-white text-gray-700 card-shadow hover:shadow-md'}`}>
+                <span>🍽️ الكل</span>
               </motion.button>
               {categories.map((cat) => (
                 <CategoryChip key={cat._id} cat={cat} active={activeCategory === cat._id} onClick={() => handleCategorySelect(cat._id)} />

@@ -53,11 +53,11 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-primary-light">
         <Navbar />
         <div className="max-w-3xl mx-auto px-4 mt-6 space-y-4 animate-pulse">
           <div className="h-72 rounded-3xl bg-gray-200" />
-          <div className="bg-white rounded-3xl p-6 space-y-3">
+          <div className="bg-primary-light rounded-3xl p-6 space-y-3">
             <div className="h-6 bg-gray-200 rounded-full w-2/3" />
             <div className="h-4 bg-gray-100 rounded-full w-1/3" />
             <div className="h-8 bg-gray-200 rounded-full w-1/4 mt-4" />
@@ -79,7 +79,7 @@ export default function ProductDetail() {
   const desc = product.description || '';
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-primary-light">
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-4 pb-20">
@@ -122,7 +122,7 @@ export default function ProductDetail() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.4 }}
-          className="bg-white rounded-3xl mt-4 p-6 card-shadow"
+          className="bg-primary-light rounded-3xl mt-4 p-6 card-shadow"
         >
           {/* Header row */}
           <div className="flex items-start justify-between gap-4">

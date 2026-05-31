@@ -36,7 +36,7 @@ export default function CategoryPage() {
   const gradient = categoryGradient(category?.name || '');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-primary-light">
       <Navbar />
 
       {/* Hero */}
@@ -47,7 +47,7 @@ export default function CategoryPage() {
         className={`bg-gradient-to-br ${gradient} text-white`}
       >
         <div className="max-w-6xl mx-auto px-4 py-6 flex items-center gap-3">
-          <Link to="/" className="shrink-0 p-2 rounded-xl bg-white/20 hover:bg-white/30 transition-colors">
+          <Link to="/" className="shrink-0 p-2 rounded-xl bg-primary-light/20 hover:bg-primary-light/30 transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
             </svg>
@@ -57,7 +57,7 @@ export default function CategoryPage() {
             {category?.image ? (
               <img src={assetUrl(category.image)} alt={category?.name} className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl object-cover shadow-lg ring-2 ring-white/30" />
             ) : (
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/20 flex items-center justify-center text-2xl sm:text-3xl shadow-lg">🍽️</div>
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-primary-light/20 flex items-center justify-center text-2xl sm:text-3xl shadow-lg">🍽️</div>
             )}
           </div>
 
@@ -88,7 +88,7 @@ export default function CategoryPage() {
                   whileTap={{ scale: 0.93 }}
                   onClick={() => setActiveSub(subId)}
                   className={`relative px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors ${
-                    isActive ? 'text-white' : 'bg-white text-gray-600 card-shadow'
+                    isActive ? 'text-white' : 'bg-primary-light text-gray-600 card-shadow'
                   }`}
                 >
                   {isActive && (

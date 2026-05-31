@@ -56,7 +56,7 @@ export default function Navbar({ onSearch }) {
             <img
               src="/jewaar-logo.png"
               alt="Jewaar"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
               style={{ mixBlendMode: 'normal' }}
             />
           </Link>

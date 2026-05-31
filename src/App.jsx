@@ -26,16 +26,17 @@ function SplashScreen({ onDone }) {
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 bg-white flex items-center justify-center"
+      transition={{ duration: 0.6 }}
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      style={{ backgroundColor: '#3A9A35' }}
     >
       <motion.img
-        src="/logo.svg"
-        alt="Obelix Agency"
-        initial={{ opacity: 0, scale: 0.8 }}
+        src="/jewaar-logo.jpg"
+        alt="Jewaar"
+        initial={{ opacity: 0, scale: 0.75 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="w-52 h-auto"
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="w-64 h-auto"
       />
     </motion.div>
   );

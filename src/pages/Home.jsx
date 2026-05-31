@@ -165,7 +165,7 @@ export default function Home() {
   const activeCatName = categories.find((c) => c._id === activeCategory)?.name;
 
   return (
-    <div className="min-h-screen bg-mint">
+    <div className="min-h-screen bg-white">
       <Navbar onSearch={setSearch} />
 
       <main className="max-w-6xl mx-auto px-4 pb-20">

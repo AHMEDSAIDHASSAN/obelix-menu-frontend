@@ -42,10 +42,10 @@ export default function DashboardLayout() {
       <div className="px-5 py-4 border-b border-white/8">
         <div className="flex items-center gap-3">
           <div className="bg-white rounded-xl p-1.5 shrink-0">
-            <img src="/logo.svg" alt="Obelix" className="h-8 w-auto" />
+            <img src="/jewaar-logo.png" alt="Jewaar" className="h-8 w-auto" />
           </div>
           <div>
-            <p className="text-sm font-bold text-white leading-none">Obelix Agency</p>
+            <p className="text-sm font-bold text-white leading-none">Jewaar</p>
             <p className="text-xs text-gray-500 mt-0.5">لوحة التحكم</p>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function DashboardLayout() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <img src="/logo.svg" alt="Obelix" className="h-7 w-auto" />
+          <img src="/jewaar-logo.png" alt="Jewaar" className="h-7 w-auto" />
         </header>
 
         <main className="flex-1 overflow-y-auto p-5 md:p-7">

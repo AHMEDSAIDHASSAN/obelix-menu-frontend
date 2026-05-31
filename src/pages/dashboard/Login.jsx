@@ -29,14 +29,13 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-[#1A1A1A] flex flex-col items-center justify-center px-4 gap-6">
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 gap-6" style={{ background: 'radial-gradient(ellipse at center, #4CBF42 0%, #2E8A28 100%)' }}>
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="bg-white rounded-3xl px-8 py-6 shadow-xl"
       >
-        <img src="/logo.svg" alt="Obelix Agency" className="w-44 h-auto" />
+        <img src="/jewaar-logo.png" alt="Jewaar" className="w-56 h-auto drop-shadow-xl" />
       </motion.div>
 
       <motion.div
@@ -71,7 +70,7 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary text-black font-bold py-3 rounded-xl hover:bg-primary-dark transition-colors disabled:opacity-60 text-sm"
+            className="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-primary-dark transition-colors disabled:opacity-60 text-sm"
           >
             {loading ? 'جاري الدخول...' : 'دخول'}
           </button>

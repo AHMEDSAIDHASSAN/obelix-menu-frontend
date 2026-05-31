@@ -41,7 +41,7 @@ export default function DashboardLayout() {
       {/* Logo */}
       <div className="px-5 py-4 border-b border-white/8">
         <div className="flex items-center gap-3">
-          <div className="bg-white rounded-xl p-1.5 shrink-0">
+          <div className="rounded-xl p-1.5 shrink-0" style={{ background: 'radial-gradient(ellipse at center, #4CBF42 0%, #2E8A28 100%)' }}>
             <img src="/jewaar-logo.png" alt="Jewaar" className="h-8 w-auto" />
           </div>
           <div>

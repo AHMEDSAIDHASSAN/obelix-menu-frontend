@@ -25,7 +25,7 @@ export default function Navbar({ onSearch }) {
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      style={{ backgroundColor: '#3A9A35' }}
+      style={{ background: 'radial-gradient(ellipse at 60% 50%, #4CBF42 0%, #2E8A28 100%)' }}
       className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'shadow-lg' : ''}`}
     >
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center relative">
@@ -54,7 +54,7 @@ export default function Navbar({ onSearch }) {
         <div className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center">
           <Link to="/">
             <img
-              src="/jewaar-logo.jpg"
+              src="/jewaar-logo.png"
               alt="Jewaar"
               className="h-12 w-auto object-contain"
               style={{ mixBlendMode: 'normal' }}

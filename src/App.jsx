@@ -28,10 +28,10 @@ function SplashScreen({ onDone }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
       className="fixed inset-0 z-50 flex items-center justify-center"
-      style={{ backgroundColor: '#3A9A35' }}
+      style={{ background: 'radial-gradient(ellipse at center, #4CBF42 0%, #2E8A28 100%)' }}
     >
       <motion.img
-        src="/jewaar-logo.jpg"
+        src="/jewaar-logo.png"
         alt="Jewaar"
         initial={{ opacity: 0, scale: 0.75 }}
         animate={{ opacity: 1, scale: 1 }}

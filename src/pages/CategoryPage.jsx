@@ -5,7 +5,7 @@ import api from '../api/axios';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import { SkeletonCard } from '../components/SkeletonCard';
-import { staggerContainer, categoryGradient } from '../utils/animations';
+import { staggerContainer } from '../utils/animations';
 import { assetUrl } from '../lib/asset';
 
 export default function CategoryPage() {
@@ -33,8 +33,6 @@ export default function CategoryPage() {
   }, [id]);
 
   const filtered = activeSub === 'all' ? products : products.filter((p) => p.subCategory?._id === activeSub);
-  const gradient = categoryGradient(category?.name || '');
-
   return (
     <div className="min-h-screen bg-primary-light">
       <Navbar />
@@ -44,7 +42,8 @@ export default function CategoryPage() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className={`bg-gradient-to-br ${gradient} text-white`}
+        style={{ background: 'radial-gradient(ellipse at 60% 50%, #4CBF42 0%, #2E8A28 100%)' }}
+        className="text-white"
       >
         <div className="max-w-6xl mx-auto px-4 py-6 flex items-center gap-3">
           <Link to="/" className="shrink-0 p-2 rounded-xl bg-primary-light/20 hover:bg-primary-light/30 transition-colors">

@@ -53,7 +53,7 @@ export default function ProductDetail() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-[#FFFBF0]">
+      <div className="min-h-screen bg-white">
         <Navbar />
         <div className="max-w-3xl mx-auto px-4 mt-6 space-y-4 animate-pulse">
           <div className="h-72 rounded-3xl bg-gray-200" />
@@ -79,7 +79,7 @@ export default function ProductDetail() {
   const desc = product.description || '';
 
   return (
-    <div className="min-h-screen bg-[#FFFBF0]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       <main className="max-w-3xl mx-auto px-4 pb-20">

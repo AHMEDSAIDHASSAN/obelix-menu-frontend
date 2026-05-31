@@ -36,7 +36,7 @@ export default function CategoryPage() {
   const gradient = categoryGradient(category?.name || '');
 
   return (
-    <div className="min-h-screen bg-[#FFFBF0]">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero */}

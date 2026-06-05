@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import { staggerContainer, cardVariant, categoryGradient, getFoodEmoji } from '../utils/animations';
 import { assetUrl } from '../lib/asset';
+import ReviewForm from '../components/ReviewForm';
+import ReviewsList from '../components/ReviewsList';
 
 function SizeButton({ size, selected, onClick }) {
   return (
@@ -37,6 +39,7 @@ export default function ProductDetail() {
   const [similar, setSimilar] = useState([]);
   const [selectedSize, setSelectedSize] = useState(null);
   const [expanded, setExpanded] = useState(false);
+  const [reviewKey, setReviewKey] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -245,6 +248,18 @@ export default function ProductDetail() {
             </motion.div>
           </motion.section>
         )}
+
+        {/* Reviews */}
+        {product && (
+          <section className="mt-10 pb-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-black text-gray-900">💬 التقييمات</h2>
+              <ReviewForm productId={product._id} onSubmitted={() => setReviewKey((k) => k + 1)} />
+            </div>
+            <ReviewsList productId={product._id} refreshKey={reviewKey} />
+          </section>
+        )}
+
       </main>
     </div>
   );

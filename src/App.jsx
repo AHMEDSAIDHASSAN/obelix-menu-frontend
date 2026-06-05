@@ -15,6 +15,8 @@ import ManageSubCategories from './pages/dashboard/ManageSubCategories';
 import ManageProducts from './pages/dashboard/ManageProducts';
 import ManageOffers from './pages/dashboard/ManageOffers';
 import ManageSubSubCategories from './pages/dashboard/ManageSubSubCategories';
+import ManageReviews from './pages/dashboard/ManageReviews';
+import ManageSocialLinks from './pages/dashboard/ManageSocialLinks';
 
 function SplashScreen({ onDone }) {
   useEffect(() => {
@@ -80,6 +82,8 @@ export default function App() {
               <Route path="products" element={<ManageProducts />} />
               <Route path="subsubcategories" element={<ManageSubSubCategories />} />
               <Route path="offers" element={<ManageOffers />} />
+              <Route path="reviews" element={<ManageReviews />} />
+              <Route path="social" element={<ManageSocialLinks />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

@@ -7,6 +7,9 @@ import { SkeletonCard, SkeletonBanner, SkeletonChips } from '../components/Skele
 import { staggerContainer, getFoodEmoji } from '../utils/animations';
 import { useLang, pick } from '../context/LangContext';
 import { assetUrl } from '../lib/asset';
+import ReviewForm from '../components/ReviewForm';
+import ReviewsList from '../components/ReviewsList';
+import Footer from '../components/Footer';
 
 /* ─── Offers Banner ─────────────────────────────────────── */
 function OffersBanner({ offers }) {
@@ -115,6 +118,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [subsLoading, setSubsLoading] = useState(false);
   const [subSubsLoading, setSubSubsLoading] = useState(false);
+  const [reviewKey, setReviewKey] = useState(0);
 
   useEffect(() => {
     Promise.all([api.get('/offers'), api.get('/categories'), api.get('/products')]).then(([o, c, p]) => {
@@ -285,7 +289,19 @@ export default function Home() {
             </AnimatePresence>
           )}
         </section>
+        {/* Reviews */}
+        {!loading && !isSearching && activeCategory === 'all' && (
+          <section className="mt-10">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-black text-gray-900">💬 تقييمات العملاء</h2>
+              <ReviewForm onSubmitted={() => setReviewKey((k) => k + 1)} />
+            </div>
+            <ReviewsList refreshKey={reviewKey} />
+          </section>
+        )}
+
       </main>
+      <Footer />
     </div>
   );
 }

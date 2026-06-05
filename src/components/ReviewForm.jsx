@@ -4,9 +4,8 @@ import api from '../api/axios';
 
 function NumberRating({ value, onChange, label, labelAr }) {
   return (
-    <div className="flex items-center justify-between py-2 border-b border-green-200/50 last:border-0">
-      <span className="text-xs font-bold text-gray-700 uppercase tracking-wide w-40 shrink-0">{label}</span>
-      <div className="flex gap-1.5">
+    <div dir="ltr" className="flex items-center gap-2 py-2 border-b border-white/20 last:border-0">
+      <div className="flex gap-1.5 shrink-0">
         {[1, 2, 3, 4, 5].map((n) => (
           <button
             key={n}
@@ -15,14 +14,17 @@ function NumberRating({ value, onChange, label, labelAr }) {
             className={`w-7 h-7 rounded-full text-xs font-black border-2 transition-all ${
               value === n
                 ? 'bg-gray-900 text-white border-gray-900 scale-110'
-                : 'bg-white text-gray-500 border-gray-300 hover:border-gray-600'
+                : 'bg-white/80 text-gray-600 border-white/60 hover:border-gray-400'
             }`}
           >
             {n}
           </button>
         ))}
       </div>
-      <span className="text-xs text-gray-500 w-28 text-left shrink-0 hidden sm:block">{labelAr}</span>
+      <div className="flex-1 text-right">
+        <p className="text-xs font-bold text-white uppercase tracking-wide leading-tight">{label}</p>
+        <p className="text-xs text-white/70">{labelAr}</p>
+      </div>
     </div>
   );
 }
@@ -113,18 +115,18 @@ export default function ReviewForm({ productId = null, onSubmitted }) {
                   </div>
 
                   {/* Personal Info */}
-                  <div className="mx-4 bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-3">
+                  <div className="mx-4 bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-3" dir="ltr">
                     <div className="grid grid-cols-2 gap-x-4 gap-y-3">
                       {[
-                        { key: 'name', label: 'NAME', required: true },
-                        { key: 'favoriteDate', label: 'FAVORIT DATE' },
-                        { key: 'address', label: 'ADDRESS' },
-                        { key: 'dateOfVisit', label: 'DATE OF VISIT' },
-                        { key: 'phone', label: 'THE PHONE NUMBER' },
-                        { key: 'tableNumber', label: 'TABLE NUMBER' },
+                        { key: 'name', label: 'NAME :', required: true },
+                        { key: 'favoriteDate', label: 'FAVORIT DATE :' },
+                        { key: 'address', label: 'ADDRESS :' },
+                        { key: 'dateOfVisit', label: 'DATE OF VISIT :' },
+                        { key: 'phone', label: 'THE PHONE NUMBER :' },
+                        { key: 'tableNumber', label: 'TABLE NUMBER :' },
                       ].map(({ key, label, required }) => (
                         <div key={key}>
-                          <p className="text-[10px] font-black text-white/80 uppercase tracking-widest mb-0.5">{label} :</p>
+                          <p className="text-[10px] font-black text-white/80 uppercase tracking-widest mb-0.5">{label}</p>
                           <input
                             value={form[key]}
                             onChange={(e) => setField(key, e.target.value)}
@@ -137,7 +139,7 @@ export default function ReviewForm({ productId = null, onSubmitted }) {
                   </div>
 
                   {/* Ratings */}
-                  <div className="mx-4 bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-3 space-y-0">
+                  <div className="mx-4 bg-white/20 backdrop-blur-sm rounded-2xl p-4 mb-3 space-y-0" dir="ltr">
                     {/* FOOD */}
                     <p className="text-center font-black text-white text-sm tracking-widest mb-2">FOOD</p>
                     <NumberRating value={ratings.foodVariety} onChange={(v) => setRating('foodVariety', v)} label="THIS VARIETY OF THE MENU" labelAr="تنوع قائمة الطعام" />

@@ -63,7 +63,14 @@ export default function Footer() {
           </a>
         ))}
       </div>
-      <p className="text-xs text-gray-400">Jewaar cafe & restaurant</p>
+      <p className="text-xs text-gray-400 text-center leading-relaxed">
+        © Copyrights 2026 - Jwaar Cafe & Restaurant - All rights reserved
+        <br />
+        Powered By{' '}
+        <a href="https://obelixagency.com/" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">
+          OBELIX Agency
+        </a>
+      </p>
     </footer>
   );
 }

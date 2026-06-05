@@ -17,6 +17,7 @@ import ManageOffers from './pages/dashboard/ManageOffers';
 import ManageSubSubCategories from './pages/dashboard/ManageSubSubCategories';
 import ManageReviews from './pages/dashboard/ManageReviews';
 import ManageSocialLinks from './pages/dashboard/ManageSocialLinks';
+import AIMenuScanner from './pages/dashboard/AIMenuScanner';
 
 function SplashScreen({ onDone }) {
   useEffect(() => {
@@ -84,6 +85,7 @@ export default function App() {
               <Route path="offers" element={<ManageOffers />} />
               <Route path="reviews" element={<ManageReviews />} />
               <Route path="social" element={<ManageSocialLinks />} />
+              <Route path="ai-scanner" element={<AIMenuScanner />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

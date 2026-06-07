@@ -41,8 +41,6 @@ export default function Footer() {
   const platforms = ['whatsapp', 'instagram', 'facebook', 'tiktok', 'snapchat'];
   const active = platforms.filter((p) => links[p]);
 
-  if (!active.length) return null;
-
   const getHref = (platform, url) => {
     if (platform === 'whatsapp' && !url.startsWith('http')) return `https://wa.me/${url.replace(/\D/g, '')}`;
     return url.startsWith('http') ? url : `https://${url}`;
